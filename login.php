@@ -7,16 +7,15 @@
 
 form {
     
-	
-	margin:73px auto;
+	background-color:white;
+	border:1px solid blue;
+	margin:20px auto;
 	padding:20px;
 	width:500px;
-	position:absolute;
-	right:100px;
 	
 	-moz-box-shadow:0 0 1px #444 inset;
-	-webkit-box-shadow:0 0 10px #444 inset;
-	box-shadow:0 0 20px #444 inset;
+	-webkit-box-shadow:0 0 1px #444 inset;
+	box-shadow:0 0 5px #444 inset;
 	
 }
 
@@ -89,60 +88,48 @@ a:hover, a:active {
 }
 .img{
 	position:fixed;
-	top:40px;
-	right:200px;
+	top:130px;
+}
+.loginhere{
+	position:fixed;
+	top:100px;
+	right:600px;
 
 }
 .uimg{
 	position:fixed;
 	top:240px;
-	left:727px;
+	left:415px;
 }
 .lockimg{
 	position:fixed;
 	top:320px;
-	left:727px;
-}
-html { 
-  background: url(img/back.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	left:415px;
 }
 </style>
-
-<body >
-<center><img src="img/barrackpore2.png" style="position:fixed;overflow: none;right:10px;top:-20px;"></center>
+<img src="img/admin_login.jpg" class="img">
+<body>
+<img src="img/amart.png" style="position:fixed;top:-12px;left:290px;">
 <center>
-
 <br/><br/>  
 <br/><br/>  
-<center><img src="img/userlogin.png" class="img" height=150 width=300></center>
+<center><h2><center><img src="img/userlogin.png" class="loginhere" height=150 width=300></center></h2></center>
 
-<form action="loginaction.php" method="post">
-
+<form action="validation.php" method="post">
 <div class="imgcontainer">
-    <?php
-		function generateRandomString($length = 10) {
-		return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
-		}
-		$captcha=generateRandomString();
-	?>
+    
   </div>
-	<input type="hidden" name="captcha" value="<?php echo $captcha?>">
-  <div class="container">
 
+  <div class="container">
+  <br/><br/><br/>
     <label><b>Username</b></label>
-    <img src="img/uname.png" height=35 width=35 class="uimg">
-	<input type="text" placeholder="Enter username" name="uname" required>
+	<img src="img/uname.png" height=35 width=35 class="uimg">
+    <input type="text" placeholder="Enter username" name="name" required>
 
     <label><b>Password</b></label>
-    <img src="img/lock.png" height=35 width=35 class="lockimg">
-	<input type="password" placeholder="Enter Password" name="password" required><br/> <br/> 
-     <?php
-	echo "<font style='background-color:yellow;color=red;font-size:160%;'>$captcha</font> " ;
-	?><input type="text" placeholder="Enter the above code here" name="captchaif" required> <br/>
+	<img src="img/lock.png" height=35 width=35 class="lockimg">
+    <input type="password" placeholder="Enter Password" name="password" required>
+        
     <input type="image" src="img/login.jpg" height="80" width="270"><br/>
     <input type="checkbox" checked="checked"> Remember me
   </div>
